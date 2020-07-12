@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 /*Author - Subodh M
- * This method is use to read config file
+ * This method is use to read configuration file
  */
 public class PropertiesFileReader {
 
