@@ -1,7 +1,7 @@
 # Geophy-EVRA
-Test Automation assignment for Geophy EVRA application.This project is built on Cucumber,Maven,TestNg with Java
-This project is built on Java,Cucumber,TestNG,Maven.
-Extent reporting is used for automation execution report.
+Test Automation assignment for Geophy EVRA application.This project is built on Cucumber,Maven,TestNg with Java<br>
+This project is built on Java,Cucumber,TestNG,Maven.<br>
+Extent reporting is used for automation execution report.<br>
 
 As part of Manual test i have found few observations as below -
 1.Cap rate % sign popping down when there is 4 digit value. e.g if its 10.12 then % sign is not aligned.
