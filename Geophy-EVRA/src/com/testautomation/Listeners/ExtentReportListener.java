@@ -21,6 +21,9 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.testautomation.Utility.PropertiesFileReader;
 
+/*This Class is use for Extent reporting of the test execution
+ * All Screenshots are placed in Screenshot folder.Please check Home.dir property in config file
+ */
 public class ExtentReportListener {
 
 	public static ExtentHtmlReporter report = null;

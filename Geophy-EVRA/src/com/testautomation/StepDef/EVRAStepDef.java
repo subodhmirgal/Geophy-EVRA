@@ -1,5 +1,7 @@
 package com.testautomation.StepDef;
 
+import java.util.List;
+import java.util.Map;
 /*Author- Subodh M
  * This Class maintains all Step definition for EVRA feature tests
  * Refer Page Object Package for all page Web elements
@@ -16,6 +18,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.GherkinKeyword;
 import com.testautomation.Listeners.ExtentReportListener;
 import com.testautomation.PageObjects.LoginPage;
+import com.testautomation.PageObjects.ReportPage;
 import com.testautomation.PageObjects.SearchPropertyPage;
 import com.testautomation.Utility.BrowserUtility;
 import com.testautomation.Utility.PropertiesFileReader;
@@ -23,6 +26,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import io.cucumber.datatable.DataTable;
 
 public class EVRAStepDef extends ExtentReportListener {
 
@@ -312,7 +316,7 @@ public class EVRAStepDef extends ExtentReportListener {
 
 	}
 
-	@And("^Run Valuation button must be disabled$")
+	@Then("^Run Valuation button must be disabled$")
 	public void runValuationButtonMustBeDisabled() throws Throwable {
 		ExtentTest logInfo = null;
 		try {
@@ -340,6 +344,44 @@ public class EVRAStepDef extends ExtentReportListener {
 		} catch (AssertionError | Exception e) {
 			testStepHandle("FAIL", driver, logInfo, e);
 		}
+	}
+
+	/*
+	 * Below method verifies property details entered in search criteria on report
+	 * page
+	 */
+
+	@And("^Verify all details on entered on reports page$")
+	public void verifyAllDetailsOnEnteredOnReportsPage(DataTable table) throws Throwable {
+		ExtentTest logInfo = null;
+		try {
+			logInfo = test.createNode(new GherkinKeyword("Then"), "Verify All Input Property Data");
+
+			List<Map<String, String>> list = table.asMaps(String.class, String.class);
+			for (Map<String, String> DataInput : list) {
+
+				String VerifyNumUnits = new ReportPage(driver).VerifyNumOfUnits().getText();
+				Assert.assertEquals(VerifyNumUnits, DataInput.get("NumOfUnits"),
+						"NumOfUnits is not matched on Report Page");
+
+				String VerifyYearOfConstruction = new ReportPage(driver).VerifyYearOfConstruction().getText();
+				Assert.assertEquals(VerifyYearOfConstruction, DataInput.get("YearOfConstruction"),
+						"YearOfConstruction is not matched on Report Page");
+
+				String VerifyNOI = new ReportPage(driver).VerifyNoi().getText();
+				Assert.assertEquals(VerifyNOI, DataInput.get("NOI"), "NOI is not matched on Report Page");
+
+				String VerifyOccupancy = new ReportPage(driver).VerifyOccupancy().getText();
+				Assert.assertEquals(VerifyOccupancy, DataInput.get("occupancy"),
+						"Occupancy is not matched on Report Page");
+				logInfo.addScreenCaptureFromPath(captureScreenShot(driver));
+
+			}
+
+		} catch (AssertionError | Exception e) {
+			testStepHandle("FAIL", driver, logInfo, e);
+		}
+
 	}
 
 }

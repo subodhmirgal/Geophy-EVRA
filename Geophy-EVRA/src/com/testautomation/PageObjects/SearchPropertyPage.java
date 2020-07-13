@@ -9,6 +9,11 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import com.testautomation.StepDef.TestHooks;
 
+/*Author - Subodh M
+ * This is Page Object class for SearchProperty Page
+ * Please add here new objects created on EVRA SearchProperty page.
+ */
+
 public class SearchPropertyPage {
 	private WebDriver driver;
 

@@ -1,25 +1,26 @@
 package com.testautomation.Listeners;
 
-
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 
-public class ITestListenerImpl extends ExtentReportListener implements ITestListener
-{
+/*This is listener class use to log test case execution status 
+ */
+
+public class ITestListenerImpl extends ExtentReportListener implements ITestListener {
 	private static ExtentReports extent;
 
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	public void onTestSuccess(ITestResult result) {
 
 		System.out.println("PASS");
-		
+
 	}
 
 	public void onTestFailure(ITestResult result) {
@@ -31,21 +32,20 @@ public class ITestListenerImpl extends ExtentReportListener implements ITestList
 	}
 
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		
+
 	}
 
 	public void onStart(ITestContext context) {
 		System.out.println("Execution started");
-		extent= setUp();
-		
+		extent = setUp();
+
 	}
 
 	public void onFinish(ITestContext context) {
 		System.out.println("Execution completed");
-		extent.flush();		
-		System.out.println("Generated Report. . .");	
-		
+		extent.flush();
+		System.out.println("Generated Report. . .");
+
 	}
-	
 
 }

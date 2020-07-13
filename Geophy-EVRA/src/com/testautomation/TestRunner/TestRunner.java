@@ -11,7 +11,7 @@ import cucumber.api.testng.TestNGCucumberRunner;
 import cucumber.api.testng.*;
 
 @CucumberOptions(features = "./features/", glue = { "com.testautomation.StepDef" }, 
-tags = {"@SearchFeature01" }, 
+//tags = {"@SearchFeature03" }, 
 monochrome = true)
 public class TestRunner {
 

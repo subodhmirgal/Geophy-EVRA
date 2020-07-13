@@ -11,6 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.testautomation.StepDef.TestHooks;
 
+/*Author - Subodh M
+ * This is Page Object class for Login Page
+ * Please add here new objects created on EVRA login page.
+ */
+
 public class LoginPage {
 
 	private WebDriver driver;
