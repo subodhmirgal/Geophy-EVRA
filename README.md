@@ -1,6 +1,6 @@
 # Geophy-EVRA
 Test Automation assignment for Geophy EVRA application.This project is built on Cucumber,Maven,TestNg with Java<br>
-<b>This project is built</b> on <br>
+<b>This project is built on</b>  <br>
    	 * Java<br>
 	 * Cucumber<br>
 	 * TestNG<br>
